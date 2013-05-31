@@ -142,6 +142,10 @@ typedef struct MOVStreamContext {
     int start_pad;        ///< amount of samples to skip due to enc-dec delay
     unsigned int rap_group_count;
     MOVSbgp *rap_group;
+    unsigned int roll_desc_count;
+    unsigned int roll_group_count;
+    int16_t *roll_distances;
+    MOVSbgp *roll_group;
 } MOVStreamContext;
 
 typedef struct MOVContext {
