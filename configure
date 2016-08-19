@@ -214,6 +214,7 @@ External library support:
   --disable-iconv          disable iconv [autodetect]
   --enable-jni             enable JNI support [no]
   --enable-ladspa          enable LADSPA audio filtering [no]
+  --enable-libaom          enable AV1 video encoding/decoding [no]
   --enable-libass          enable libass subtitles rendering,
                            needed for subtitles and ass filter [no]
   --enable-libbluray       enable BluRay reading using libbluray [no]
@@ -1479,6 +1480,7 @@ EXTERNAL_LIBRARY_LIST="
     iconv
     jni
     ladspa
+    libaom
     libass
     libbluray
     libbs2b
@@ -2750,6 +2752,7 @@ pcm_mulaw_at_encoder_deps="audiotoolbox"
 pcm_mulaw_at_encoder_select="audio_frame_queue"
 chromaprint_muxer_deps="chromaprint"
 h264_videotoolbox_encoder_deps="videotoolbox_encoder pthreads"
+libaom_av1_decoder_deps="libaom"
 libcelt_decoder_deps="libcelt"
 libfaac_encoder_deps="libfaac"
 libfaac_encoder_select="audio_frame_queue"
@@ -5651,6 +5654,7 @@ enabled jni               && { [ $target_os = "android" ] && check_header jni.h 
                                check_lib2 "dlfcn.h" dlopen -ldl; }
 enabled ladspa            && { check_header ladspa.h || die "ERROR: ladspa.h header not found"; }
 enabled libiec61883       && require libiec61883 libiec61883/iec61883.h iec61883_cmp_connect -lraw1394 -lavc1394 -lrom1394 -liec61883
+enabled libaom            && require_pkg_config "aom >= 0.1.0" aom/aom_codec.h aom_codec_version
 enabled libass            && require_pkg_config libass ass/ass.h ass_library_init
 enabled libbluray         && require_pkg_config libbluray libbluray/bluray.h bd_open
 enabled libbs2b           && require_pkg_config libbs2b bs2b.h bs2b_open

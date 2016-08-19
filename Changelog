@@ -16,6 +16,7 @@ version <next>:
 - crystalizer audio filter
 - acrusher audio filter
 - bitplanenoise video filter
+- Alliance for Open Media AV1 support using libaom
 
 
 version 3.1:
