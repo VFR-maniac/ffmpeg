@@ -849,6 +849,7 @@ OBJS-$(CONFIG_ALAC_AT_ENCODER)            += audiotoolboxenc.o
 OBJS-$(CONFIG_ILBC_AT_ENCODER)            += audiotoolboxenc.o
 OBJS-$(CONFIG_PCM_ALAW_AT_ENCODER)        += audiotoolboxenc.o
 OBJS-$(CONFIG_PCM_MULAW_AT_ENCODER)       += audiotoolboxenc.o
+OBJS-$(CONFIG_LIBAOM_AV1_DECODER)         += libaomdec.o libaom.o
 OBJS-$(CONFIG_LIBCELT_DECODER)            += libcelt_dec.o
 OBJS-$(CONFIG_LIBFDK_AAC_DECODER)         += libfdk-aacdec.o
 OBJS-$(CONFIG_LIBFDK_AAC_ENCODER)         += libfdk-aacenc.o
@@ -986,6 +987,7 @@ SKIPHEADERS                            += %_tablegen.h                  \
                                           aacenc_quantization_misc.h    \
                                           $(ARCH)/vp56_arith.h          \
 
+SKIPHEADERS-$(CONFIG_LIBAOM)           += libaom.h
 SKIPHEADERS-$(CONFIG_D3D11VA)          += d3d11va.h dxva2_internal.h
 SKIPHEADERS-$(CONFIG_DXVA2)            += dxva2.h dxva2_internal.h
 SKIPHEADERS-$(CONFIG_JNI)              += ffjni.h

@@ -595,6 +595,7 @@ void avcodec_register_all(void)
     REGISTER_ENCDEC (PCM_MULAW_AT,      pcm_mulaw_at);
     REGISTER_DECODER(QDMC_AT,           qdmc_at);
     REGISTER_DECODER(QDM2_AT,           qdm2_at);
+    REGISTER_DECODER(LIBAOM_AV1,        libaom_av1);
     REGISTER_DECODER(LIBCELT,           libcelt);
     REGISTER_ENCDEC (LIBFDK_AAC,        libfdk_aac);
     REGISTER_ENCDEC (LIBGSM,            libgsm);
